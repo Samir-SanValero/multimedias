@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Titulo de ejemplo</h1>
+
+    <p>Parrafo de ejemplo</p>
+
+    <div class="main-block">
+        <a href="https://sanvalero.com" id="link">San Valero Website</a>
+    </div>
+
+    <script>
+        var title = document.getElementsByTagName("h1");
+        var parrafo = document.getElementsByTagName("p");
+        var clase = document.getElementsByClassName("main-block");
+        var link = document.getElementById("link");
+
+        console.log("El titulo es: ", title, ", el parrafo: ", parrafo, ", el link: ",  link, ", y la clase contiene: ", clase);
+    </script>
+
+</body>
+</html>

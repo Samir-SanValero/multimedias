@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+
+        <canvas id="canvas" width="300" height="150"></canvas>
+
+    </div>
+
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        // Circulo cabeza
+        context.beginPath();
+        context.arc(75, 75, 50, 0, 2 * Math.PI, false);
+        context.fillStyle = 'orange';
+        context.fill();
+        context.stroke();
+
+        // Circulo, ojo izquierdo
+        context.beginPath();
+        context.arc(60, 60, 5, 0, 2 * Math.PI, false);
+        context.fillStyle = 'white';
+        context.fill();
+        context.stroke();
+
+        // Circulo, ojo derecho
+        context.beginPath();
+        context.arc(90, 60, 5, 0, 2 * Math.PI, false);
+        context.fillStyle = 'white';
+        context.fill();
+        context.stroke();
+
+        // Sonrisa
+        context.beginPath();
+        context.arc(75, 70, 42, 0, Math.PI, false);
+        context.stroke();
+
+        context.fillText("Hola clase!!", 50, 45);
+    </script>
+</body>
+</html>

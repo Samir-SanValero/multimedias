@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img id="image" src="imagen-original.gif">
+    </div>
+
+    <script>
+
+        var imagen = document.getElementById("image");
+
+        console.log("Imagen original: ", imagen.getAttribute("src"));
+
+        imagen.setAttribute("src", "imagen-nueva.jpg");
+
+        console.log("Imagen cambiada: ", imagen.getAttribute("src"));
+
+    </script>
+</body>
+</html>
