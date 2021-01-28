@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)" id="div"
+        style="background-color: lightblue; width: 180px; height: 40px; padding: 40px;">
+
+        Pasar el raton por encima
+    </div>
+
+    <script>
+
+        function mOver(element) {
+            element.style.background = "red";
+            element.innerHTML = "¡HOLA!";
+        }
+
+        function mOut(element) {
+            element.style.background = "lightblue";
+            element.innerHTML = "Pasar el raton por encima";
+        }
+
+    </script>
+</body>
+</html>
