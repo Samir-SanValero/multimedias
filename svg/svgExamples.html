@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Documentt</title>
     <style>
-        path {
+        /* path {
             stroke-dasharray: 250;
             stroke-dashoffset: 0;
             animation-name: example;
@@ -20,17 +20,123 @@
             to {
                 stroke-dashoffset: 0;
             }
+        } */
+
+        .black {
+            stroke-dasharray: 200 200;
+            stroke-dashoffset: 0;
+            animation-name: dash;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
         }
+
+        @keyframes dash {
+            from {
+                stroke-dashoffset: 200;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .pink {
+            stroke-dasharray: 160;
+            stroke-dashoffset: 0;
+            animation-name: dashPink;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes dashPink {
+            from {
+                stroke-dashoffset: 160;
+            }
+
+            to {
+                stroke-dashoffset: -40;
+            }
+        }
+
+        @keyframes dash {
+    from {
+      stroke-dashoffset: 235;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes dash2 {
+    from {
+      stroke-dashoffset: 195;
+    }
+    to {
+      stroke-dashoffset: -40;
+    }
+  }
+
     </style>
 </head>
 
 <body>
 
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
         <path d="M10,30 L75,10 L75,75 L50,75 L60,60 L10,30" style="fill:none; stroke:red"></path>
 
+    </svg> -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <rect width="200" height="100" fill="transparent" stroke="blue" stroke-width="4" />
+
+        <path fill="transparent" stroke="#000000" stroke-width="6"
+            d="M10 30 L75 10 L75 75 L50 75 L60 60 Z" class="original" />
+
+        <path fill="transparent" stroke="#F00CFF" stroke-width="6"
+            d="M10 30 L75 10 L75 75 L50 75 L60 60 Z" class="pink"/>
+
+        <path fill="transparent" stroke="#000000" stroke-width="6"
+          d="M10 30 L75 10 L75 75 L50 75 L60 60 Z" class="black" />
+
+        <rect x="120" y="40" width="60" height="20" fill="blue" stroke="blue" stroke-width="4" />
+
+        <text x="122" y="54" fill="white" id="animate">¡Anima!</text>
     </svg>
+
+    <script>
+        
+        var anim = document.getElementById("animate");
+
+        anim.onclick = function() {
+
+	    var pathPink = document.querySelector('.pink');
+	    var pathBlack = document.querySelector('.black');
+	    var length = pathPink.getTotalLength();
+	    pathBlack.style.strokeDasharray = length + ' ' + length;
+	    pathBlack.style.strokeDashoffset = 0;
+	    pathPink.style.strokeDasharray = length + ' ' + length;
+	    pathPink.style.strokeDashoffset = length;
+	
+        pathBlack.style.animationName = "dash";
+        pathBlack.style.animationDuration = "2s";
+     pathBlack.style.animationIterationCount = "infinite";
+    pathBlack.style.animationDirection = "alternate";
+  pathBlack.style.animationTimingFunction = "linear";
+  
+  pathPink.style.animationName = "dash2";
+  pathPink.style.animationDuration = "2s";
+  pathPink.style.animationIterationCount = "infinite";
+  pathPink.style.animationDirection = "alternate";
+  pathPink.style.animationTimingFunction = "linear";
+
+	pathBlack.style.strokeDashoffset = '0';
+	pathPink.style.strokeDashoffset = '0';
+
+}
+
+    </script>
 
 </body>
 
