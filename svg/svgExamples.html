@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        path {
+            stroke-dasharray: 250;
+            stroke-dashoffset: 0;
+            animation-name: example;
+            animation-duration: 5s;
+        }
+
+        @keyframes example {
+            from {
+                stroke-dashoffset: 250;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <path d="M10,30 L75,10 L75,75 L50,75 L60,60 L10,30" style="fill:none; stroke:red"></path>
+
+    </svg>
+
+</body>
+
+</html>
